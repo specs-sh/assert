@@ -1,0 +1,19 @@
+name: BASH 5.0
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: "bash --version | head -1"
+        shell: bash
+      - run: "./vendor/microspec spec/*.spec.sh"
+        shell: bash
+        env:
+          VERBOSE: true

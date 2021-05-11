@@ -1,13 +1,13 @@
 #  `assert` & `refute`
 
-Download the [latest version](https://github.com/specs-sh/assert.sh/archive/v1.0.0.tar.gz) or install via:
+Download the [latest version](https://github.com/specs-sh/assert/archive/v1.0.0.tar.gz) or install via:
 
 ```sh
 curl https://assert.specs.sh/install.sh | bash
 ```
 
 ```sh
-source "assert.sh"
+source "assert"
 source "refute.sh"
 ```
 
