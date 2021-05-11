@@ -4,23 +4,23 @@
 EMOJI="☑️"
 REPO_ORG="specs-sh"
 PROJECT_NAME="assert"
-FILE_WITH_VERSION_VARIABLE="assert"
+FILE_WITH_VERSION_VARIABLE="assert.sh"
 VERSION_VARIABLE="ASSERT_VERSION"
 API_LATEST_RELEASE_INFO_URL="https://api.github.com/repos/$REPO_ORG/$PROJECT_NAME/releases/latest"
-FILES_TO_COPY=("assert" "refute.sh")
+FILES_TO_COPY=("assert.sh" "refute.sh")
 INSTALL_MESSAGE="Installed ☑️ assert
 
-- assert - Assert command/function returns zero
+- assert.sh - Assert command/function returns zero
 - refute.sh - Assert command/function returns non-zero
 
-source \"assert\" and \"refute\" to start using!
+source \"assert.sh\" and \"refute.sh\" to start using!
 
 Visit https://assert.specs.sh for documentation
 "
 ########################
 
 print_header() {
-  echo "$EMOJI [$PROJECT_NAME]"
+  echo "$EMOJI  [$PROJECT_NAME]"
   echo
 }
 
