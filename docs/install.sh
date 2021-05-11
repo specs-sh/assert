@@ -2,7 +2,7 @@
 
 ########################
 EMOJI="☑️"
-REPO_ORG="bx-sh"
+REPO_ORG="specs-sh"
 PROJECT_NAME="assert.sh"
 FILE_WITH_VERSION_VARIABLE="assert.sh"
 VERSION_VARIABLE="ASSERT_VERSION"
@@ -15,7 +15,7 @@ INSTALL_MESSAGE="Installed ☑️ assert.sh
 
 source \"assert.sh\" and \"refute\" to start using!
 
-Visit https://assert.sh for documentation
+Visit https://assert.specs.sh for documentation
 "
 ########################
 
