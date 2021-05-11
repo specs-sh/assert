@@ -1,16 +1,16 @@
-[![Mac (BASH 3.2)](https://github.com/bx-sh/assert.sh/workflows/Mac%20(BASH%203.2)/badge.svg)](https://github.com/bx-sh/assert.sh/actions?query=workflow%3A%22Mac+%28BASH+3.2%29%22) [![BASH 4.3](https://github.com/bx-sh/assert.sh/workflows/BASH%204.3/badge.svg)](https://github.com/bx-sh/assert.sh/actions?query=workflow%3A%22BASH+4.3%22) [![BASH 4.4](https://github.com/bx-sh/assert.sh/workflows/BASH%204.4/badge.svg)](https://github.com/bx-sh/assert.sh/actions?query=workflow%3A%22BASH+4.4%22) [![BASH 5.0](https://github.com/bx-sh/assert.sh/workflows/BASH%205.0/badge.svg)](https://github.com/bx-sh/assert.sh/actions?query=workflow%3A%22BASH+5.0%22)  
-[![Mac (Installer)](https://github.com/bx-sh/assert.sh/workflows/Mac%20(Installer)/badge.svg)](https://github.com/bx-sh/assert.sh/actions?query=workflow%3A%22Mac+%28Installer%29%22) [![Linux (Installer)](https://github.com/bx-sh/assert.sh/workflows/Linux%20(Installer)/badge.svg)](https://github.com/bx-sh/assert.sh/actions?query=workflow%3A%22Linux+%28Installer%29%22)
-
+[![Mac (BASH 3.2)](https://github.com/specs-sh/assert/workflows/Mac%20(BASH%203.2)/badge.svg)](https://github.com/specs-sh/assert/actions?query=workflow%3A%22Mac+%28BASH+3.2%29%22) [![BASH 4.0](https://github.com/specs-sh/assert/workflows/BASH%204.0/badge.svg)](https://github.com/specs-sh/assert/actions?query=workflow%3A%22BASH+4.0%22) [![BASH 4.4](https://github.com/specs-sh/assert/workflows/BASH%204.4/badge.svg)](https://github.com/specs-sh/assert/actions?query=workflow%3A%22BASH+4.4%22) [![BASH 5.0](https://github.com/specs-sh/assert/workflows/BASH%205.0/badge.svg)](https://github.com/specs-sh/assert/actions?query=workflow%3A%22BASH+5.0%22)
 ---
 
 # ☑️ `assert` & `refute`
 
-Download the [latest version](https://github.com/bx-sh/assert.sh/archive/v0.2.2.tar.gz) or install via:
-
-#### `curl https://assert.sh/installer.sh | bash`
+Download the [latest version](https://github.com/specs-sh/assert/archive/v1.0.0.tar.gz) or install via:
 
 ```sh
-source "assert.sh"
+curl https://assert.specs.sh/install.sh | bash
+```
+
+```sh
+source "assert"
 source "refute.sh"
 ```
 
@@ -31,13 +31,13 @@ refute [ -f i-exist ]
 
 ### Return or Exit
 
-The default behavior of a failing `assert` is to `exit 1`.
+The default behavior of a failing `assert` is to `exit`.
 
 ```sh
 assert [ -f somefile ] # <--- this will exit 1 on failure
 ```
 
-The default behavior of a failing `refute` is to `exit 1`.  
+The default behavior of a failing `refute` is to `exit`.  
 
 ```sh
 refute [ -f i-exist ] # <--- this will exit 1 on failure
@@ -61,20 +61,23 @@ testFileExists() {
 }
 ```
 
-`assert` and `refute` exist to provide an alternative which will `exit`
+Or simply run any command:
 
----
+```sh
+testCommand() {
+  ls some/dir # <--- this will return 1 if dir doesn't exist
+}
+```
 
-### Related Projects
+`assert` and `refute` exist to provide an alternative which will `exit`.
 
- - 🧐 [`expect.sh`](https://expectations.sh) for `expect { ... } toEqual 42` style assertions
- - 🚀 [`run-command.sh`](https://run.assert.sh) for `run ls && echo "$STDOUT"` helper function
- - 🔬 [`spec.sh`](https://specs.sh) for a lovely shell specification testing framework
+This ensures no other commands in your test will run after an assertion failure.
 
----
+#### Return
 
-#### Test Framework Compatibility
+To configure assert and/or refute to `return` on failure instead:
 
-- [Bats](https://github.com/bats-core/bats-core)
-- [shUnit2](https://github.com/kward/shunit2/)
-- [roundup](http://bmizerany.github.io/roundup/roundup.1.html)
+```sh
+ASSERT_FAIL=return
+REFUTE_FAIL=return
+```

@@ -2,20 +2,20 @@
 
 ########################
 EMOJI="☑️"
-REPO_ORG="bx-sh"
-PROJECT_NAME="assert.sh"
-FILE_WITH_VERSION_VARIABLE="assert.sh"
+REPO_ORG="specs-sh"
+PROJECT_NAME="assert"
+FILE_WITH_VERSION_VARIABLE="assert"
 VERSION_VARIABLE="ASSERT_VERSION"
 API_LATEST_RELEASE_INFO_URL="https://api.github.com/repos/$REPO_ORG/$PROJECT_NAME/releases/latest"
-FILES_TO_COPY=("assert.sh" "refute.sh")
-INSTALL_MESSAGE="Installed ☑️ assert.sh
+FILES_TO_COPY=("assert" "refute.sh")
+INSTALL_MESSAGE="Installed ☑️ assert
 
-- assert.sh - Assert command/function returns zero
+- assert - Assert command/function returns zero
 - refute.sh - Assert command/function returns non-zero
 
-source \"assert.sh\" and \"refute\" to start using!
+source \"assert\" and \"refute\" to start using!
 
-Visit https://assert.sh for documentation
+Visit https://assert.specs.sh for documentation
 "
 ########################
 

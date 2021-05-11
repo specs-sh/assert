@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: assert.sh
+title: assert
 description: Simply assert or refute
 theme: jekyll-theme-merlot
 show_downloads: true
@@ -25,8 +25,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 github:
-  zip_url: https://github.com/bx-sh/assert.sh/archive/v0.2.1.zip
-  tar_url: https://github.com/bx-sh/assert.sh/archive/v0.2.1.tar.gz
+  zip_url: https://github.com/bx-sh/assert/archive/v0.2.1.zip
+  tar_url: https://github.com/bx-sh/assert/archive/v0.2.1.tar.gz
   owner_url: https://github.com/beccasaurus
   owner_name: "@beccasaurus"
 
