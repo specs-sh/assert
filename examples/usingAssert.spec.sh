@@ -1,4 +1,4 @@
-source assert
+source assert.sh
 
 test.shouldFail.unknownCommand() {
   assert this-command-does-not-exist
